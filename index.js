@@ -4,14 +4,18 @@ const {createStore} = require('redux')
 const INCREMENTAR = 'incrementar'
 const DECREMENTAR = 'decrementar'
 
+//actions creator 
+const incrementar =()=>({type:INCREMENTAR})
+const decrementar =()=>({type:DECREMENTAR})
+
 const initialState= 0
 
 const contador = (state = initialState, action)=>{
     
     switch(action.type){
-        case 'incremenetar':
+        case INCREMENTAR:
             return state + 1
-        case 'decrementar':
+        case DECREMENTAR:
             return state - 1
         default:
             return state
@@ -24,9 +28,9 @@ const contador = (state = initialState, action)=>{
 const store = createStore(contador)
 
 store.subscribe(()=>console.log(store.getState()))
-store.dispatch({type: 'incrementar'})
-store.dispatch({type: 'incrementar'})
-store.dispatch({type: 'incrementar'})
-store.dispatch({type: 'decrementar'})
-store.dispatch({type: 'decrementar'})
-store.dispatch({type: 'decrementar'})
+store.dispatch(incrementar())
+store.dispatch(incrementar())
+store.dispatch(incrementar())
+store.dispatch(incrementar())
+store.dispatch(decrementar())
+store.dispatch(decrementar())
