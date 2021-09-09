@@ -1,5 +1,8 @@
 const {createStore} = require('redux') 
 
+//actions
+const INCREMENTAR = 'incrementar'
+const DECREMENTAR = 'decrementar'
 
 const initialState= 0
 
